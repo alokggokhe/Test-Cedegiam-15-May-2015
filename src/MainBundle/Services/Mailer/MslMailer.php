@@ -64,4 +64,4 @@ class MslMailer
 
         return true;
     }
-} 
+}

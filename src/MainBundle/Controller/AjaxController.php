@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -30,7 +29,7 @@ class AjaxController extends Controller
 			if($time_zone_name == '') {
 				$time_zone_name = 'UTC';
 			}
-			$session = $this->get('session')->set('local_timezone',$time_zone_name);
+			$this->get('session')->set('local_timezone',$time_zone_name);
 			$a_response['s_status'] = 'success';
 			$a_response['data']     = '';
 		} catch(Exception $e) {

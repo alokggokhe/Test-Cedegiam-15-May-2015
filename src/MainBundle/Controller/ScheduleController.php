@@ -6,7 +6,6 @@ namespace MainBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Config\Definition\Exception\Exception;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Filesystem\Filesystem;
 use MainBundle\Entity\Schedule;
 use Cegedim\Bundle\OwaCasBundle\Security\User\OwaUser;
