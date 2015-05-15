@@ -1,0 +1,54 @@
+{% extends 'MainBundle::layout_email.html.twig' %}
+
+{% block mailtitle %}
+	{{ subject }}
+{% endblock %}
+{% block mailbodytitle %}
+	{{ subject }} 
+{% endblock %}
+
+{% block content %}
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+		Dear {{ schedule.firstname|capitalize }} {{ schedule.lastname|capitalize }},
+	</p>
+
+	{% if action == 'Add' %}
+		<p  style="padding:0 20px; line-height:1.4;"><br />I am pleased to invite you to participate in a remote presentation titled: {{ schedule.title }} on {{ schedule.scheduledatetime|datetime('date') }} at {{ schedule.scheduledatetime|datetime('time') }}.
+		</p>
+	{% elseif action == 'Edit' %}
+		<p  style="padding:0 20px; line-height:1.4;"><br />
+			I have made some changes to the details of the invite for the remote presentation we have planned together. Please disregard my former invitation to you, review the new details below and change your calendar entry and related invite details accordingly:
+		</p>
+
+		<p  style="padding:0 20px; line-height:1.4;"><br />
+			Presentation title: {{ schedule.title }}<br />
+			Invitation date: {{ schedule.scheduledatetime|datetime('date') }}<br />
+			Invitation time: {{ schedule.scheduledatetime|datetime('time') }}
+			{% if schedule.phone is not empty %}
+				<br />Phone number to dial: {{ schedule.phone }}
+			{% endif %}
+		</p>
+	{% endif %}
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+	   At the scheduled date and time, a few minutes beforehand, please click this <a href="{{ idetailling_url }}" target="_blank">Link</a> and when on the landing page of the Dandelion platform, click the ‘Participant’ button on the landing page. 
+	</p>
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+		Then state your name in the name field (free form) and please call me at 
+		{% if schedule.phone is not empty %}
+			{{ schedule.phone }}.
+		{% else %}
+			my phone number.
+		{% endif %}
+		I shall give you the access code to this presentation over the phone and will therefore be able to share a number of slides I have prepared for you.
+	</p>
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+		I look forward to speaking with you on {{ schedule.scheduledatetime|datetime('date') }} at {{ schedule.scheduledatetime|datetime('time') }} and hope this presentation will be helpful.
+	</p>
+
+	<p style="padding:0 20px; line-height:1.4;"><br />
+		Best regards,<br /> Dr. {{ owauser.getUsername() }} {{ owauser.getFirstname() }}
+	</p>
+{% endblock %}

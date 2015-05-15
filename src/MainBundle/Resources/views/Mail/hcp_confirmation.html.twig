@@ -1,0 +1,39 @@
+{% extends 'MainBundle::layout_email.html.twig' %}
+
+{% block mailtitle %}
+	UpComing Patient Education Session - {{ schedule.title }}
+{% endblock %}
+{% block mailbodytitle %}
+	UpComing Patient Education Session - {{ schedule.title }}
+{% endblock %}
+
+{% block content %}
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+		Dear Dr. {{ owauser.getUsername()|capitalize }} {{ owauser.getFirstname()|capitalize }},
+	</p>
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+	   This is to confirm that you have invited {{ schedule.firstname }} {{ schedule.lastname }} to a remote presentation you will be delivering on {{ schedule.scheduledatetime|datetime('date') }} at {{ schedule.scheduledatetime|datetime('time') }}. 
+			{% if schedule.phone is not empty %}
+				The phone number you have provided was {{ schedule.phone }}.
+			{% else %}
+				you have not provided a phone number.
+			{% endif %}
+			If any of the above details need to be changed or corrected, please feel free to go to the <a href="{{ url('schedule_list', { 'action':'get' }) }}" target="_blank">I need to manage the patient education sessions I have scheduled</a> section of your Dandelion portal. Any changes or alterations you might make there (including cancellation, if so needed) would instantly result in the necessary email updates to {{ schedule.firstname }} {{ schedule.lastname }}.
+	</p>
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+	   At the date and time of the scheduled meeting, please log back in to <a href="{{ idetailling_hcp_url }}" target="_blank">Dandelion</a> and click the ‘I am hosting a 1:1 patient education session now’ button. You will directly be led to the remote presentation platform where the slide deck you have supplied will be waiting for you under the ‘My Documents’ folder. If you need instructions how to best use the remote presentation platform, <a href="{{ idetailling_hcp_url }}" target="_blank">here</a> is a link to a step-by-step quick starter guide that you can refer to at all time.
+	</p>
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+	   When on the phone with your patient for the presentation, please instruct them to click the link that is embedded in the invitation email they have received from Dandelion or simply ask them to enter the following URL in the address bar of their preferred web browser and hit return : <a href="{{ idetailling_hcp_url }}" target="_blank">{{ idetailling_hcp_url }}</a>. Then ask them to click the ‘Participant’ button, state their name in the name field and enter the session access code that you will be able to read them from the upper left section of the platform.
+	</p>
+
+	<p  style="padding:0 20px; line-height:1.4;"><br />
+		We hope you have a great presentation and wish you a very good rest of your day.
+	</p>
+
+	<p style="padding:0 20px; line-height:1.4;"><br />
+		The Dandelion team
+{% endblock %}

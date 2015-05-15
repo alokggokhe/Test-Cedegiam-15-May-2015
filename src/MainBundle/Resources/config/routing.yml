@@ -1,0 +1,49 @@
+main_schedule:
+    resource: "@MainBundle/Resources/config/routing/schedule.yml"
+    prefix:   /schedule
+
+main_appointment:
+    resource: "@MainBundle/Resources/config/routing/appointment.yml"
+    prefix:   /appointment
+
+index:
+    path:     /
+    defaults: { _controller: MainBundle:Home:index }
+
+homepage:
+    path:     /home
+    defaults: { _controller: MainBundle:Home:index }
+
+confirm:
+    path:   /confirm
+    defaults: { _controller: MainBundle:Confirm:index}
+
+option:
+    path:   /option
+    defaults: { _controller: MainBundle:Option:index}
+
+remote_patient_option:
+    path:   /remote_patient_option
+    defaults: { _controller: MainBundle:Option:remotePatient}
+
+invitation:
+    path:   /invitation
+    defaults: { _controller: MainBundle:Invitation:index}
+
+privacy_policy:
+    path:   /privacy_policy
+    defaults: { _controller: MainBundle:PrivacyPolicy:index}
+
+terms_of_use:
+    path:   /terms_of_use
+    defaults: { _controller: MainBundle:TermsOfUse:index}
+
+forgotten_password:
+    path:   /forgotten_password
+    defaults: { _controller: MainBundle:ForgottenPassword:index}
+
+# import routes from a controller class
+ajax:
+    resource: "@MainBundle/Controller/AjaxController.php"
+    type:     annotation
+

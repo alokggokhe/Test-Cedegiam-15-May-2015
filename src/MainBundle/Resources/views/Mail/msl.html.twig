@@ -1,0 +1,23 @@
+{% extends 'MainBundle::layout_email.html.twig' %}
+
+{% block mailtitle %}
+    Your request for UCB MSL remote presentation appointment
+{% endblock %}
+{% block mailbodytitle %}
+    <b>Thank</b> you for requesting an appointment!
+{% endblock %}
+{% block mailbodyheader %}
+    HCP request for Immediate Callback
+{% endblock %}
+
+
+{% block content %}
+    <p  style="padding:0 20px; line-height:1.4;">
+        Dr {{ name|capitalize }} just made a 1:1 remote presentation request on the Dandelion portail.<br />
+        At the date and time of the call, please logon to the Dandelion platform (<a href="{{  url('index') }}">{{  url('index') }}</a>) and initiate the call.<br />
+        Phone : {{ phone }}<br />
+        Topic/Therapeutic area: {% for topic in topics  %}{% if loop.last %}{{ topic.name}} {% else %}{{ topic.name }}, {% endif %}{% endfor %}<br />
+        Questions to be covered: {{ question }}<br />
+        Date and time of the call: {% if availability =='immediately' %}Immediately{% else %}{{ dateTime | datetime('datetime') }}{% endif %}
+    </p>
+{% endblock %}

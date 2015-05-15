@@ -1,0 +1,25 @@
+schedule_new:
+    path:     /new
+    defaults: { _controller: "MainBundle:Schedule:add" }
+
+schedule_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MainBundle:Schedule:edit" }
+
+schedule_list:
+    path:   /schedule_list/{action}
+    defaults: { _controller: MainBundle:Schedule:list}
+
+schedule_confirm:
+    path:   /schedule_confirm/{id}
+    defaults: { _controller: MainBundle:Schedule:scheduleConfirm}
+
+schedule_status:
+    path:     /status/{action}/{id}
+    defaults: { _controller: "MainBundle:Schedule:statusChange" }
+
+schedule_confirm_cancel:
+    path:     /schedule_confirm_cancel/{id}
+    defaults: { _controller: "MainBundle:Schedule:scheduleConfirmCancel" }
+
+

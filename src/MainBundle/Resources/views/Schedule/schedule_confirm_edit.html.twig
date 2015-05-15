@@ -1,0 +1,33 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block modulestylesheets %}
+<link href="{{ asset('bundles/main/css/schedule.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+	<section id="panel">
+		<div class="panel">
+			<div class="panel-first-part">
+				<a href="{{ path('logout') }}" id="logout" title="Logout">Log out</a>
+				<h1 class="panel-title-form title-confirm"><b>Confirm changes</b></h1>
+			</div>
+			<div class="panel-second-part">
+				<form name="frm_schedule_edit" id="frm_schedule_edit" method="POST" action="{{ path('schedule_confirm', {'id':request.id}) }}">
+					<h2><b>Are you sure ?</b></h2>
+					<p>Doctor please confirm the changes you have just made to your remote session details.</p>
+					<p>Upon clicking the 'YES, SAVE AND SEND MODIFICATIONS' button below, an email will immediately be sent out to your patient on your behalf, setting out the new details of your invitation.</p>
+					<p></p>
+					<div class="row button-group text-center">
+						<button type="submit" class="btn btn-primary pull-right button-space">Yes, Save and Send Modifications</button>
+						<a href="{{ path('schedule_list',{ 'action':'get' }) }}" class="btn btn-default pull-right" title='No'>No</a>
+					</div>
+					<input type="hidden" name="title" id="title" value="{{ request.title }}">
+					<input type="hidden" name="scheduledatetime" id="scheduledatetime" value="{{ request.scheduledatetime|date('Y-m-d H:i:s') }}">
+					<input type="hidden" name="phone" id="phone" value="{{ request.phone }}">
+					<input type="hidden" name="id" id="id" value="{{ request.id }}">
+					<input type="hidden" name="action" id="action" value="Edit">
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}

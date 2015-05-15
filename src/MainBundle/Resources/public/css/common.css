@@ -1,0 +1,101 @@
+.button-text{
+	white-space: normal !important;
+	word-wrap: break-word;
+	text-align: center;
+	font-weight: bold;
+}
+/* Button */
+.common-button, .common-button:hover {
+	background-color: #46b29b !important;
+	font-size: 14pt !important;
+	font-family: Arial,sans-serif;
+	text-transform: uppercase;
+	border: #46b29b !important;
+	cursor: pointer;
+}
+.delete-button{
+	background-color: #ca2222 !important;
+	font-size: 14pt !important;
+	font-family: Arial,sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+.save-button{
+	background-color: #46b29b !important;
+	font-size: 14pt !important;
+	font-family: Arial,sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+.close-button{
+	background-color: #46b29b !important;
+	font-size: 14pt !important;
+	font-family: Arial,sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.btn{
+	text-transform: uppercase;
+}
+
+/* Padding */
+.padding-top-0px{
+	padding-top: 0 !important;
+}
+.padding-top-10px{
+	padding-top: 10px !important;
+}
+.padding-bottom-10px{
+	padding-bottom: 10px !important;
+}
+/* Popup */
+.modal-title {
+	font-weight: bold;
+}
+.index .title-login , .homepage .title-login {
+	font-size: 18pt !important;
+}
+.index .footer, .homepage .footer, .index .panel-form-second-part .button-group .btn, .homepage .panel-form-second-part .button-group .btn,.index .panel-form-second-part .button-group a, .homepage .panel-form-second-part .button-group a, .index .panel-form-second-part h2, .homepage .panel-form-second-part h2 {
+	font-size: 14pt !important;
+}
+.index .panel, .homepage .panel {
+	padding: 0 25px 20px !important; 
+}
+.index .hostlink, .homepage .hostlink {
+	margin-top: 50px;
+}
+.index .hostlink a, .homepage .hostlink a {
+	padding-left: 3px;
+    padding-right: 3px;
+    margin-bottom: 10px;	
+    font-size: 14pt;
+}
+.forgotten_password .forgotten, .forgotten_password .forgotten p, .forgotten_password .forgotten .button-group .btn {
+	font-size: 14pt;	
+}
+.index .fa-user, .homepage .fa-user,.index .fa-lock, .homepage .fa-lock, .fa-envelope {
+	color: black;
+}
+.option nav .option_margintop .row img, .remote_patient_option nav .option_margintop .row img {
+	margin-top: 8px;
+}
+.option nav .option_margintop .row, .remote_patient_option nav .option_margintop .row {
+	margin-top: -8px;
+}
+.invitation form .form-group label, .invitation .button-group button, .invitation .panel-form-second-part h2,.invitation .panel-form-second-part h3, .option .panel-form-second-part h3, .schedule_confirm .panel-second-part h2, .schedule_confirm_cancel .panel-second-part a, .schedule_confirm_cancel .panel-second-part h2, .schedule_edit .panel-second-part a, .schedule_edit .panel-second-part h2, .schedule_list_form .panel-form-second-part h3, .remote_patient_option .panel-form-second-part h3, .schedule_confirm .panel-second-part p, .schedule_confirm .panel-second-part button, .schedule_confirm_cancel .panel-second-part p, .schedule_confirm_cancel .panel-second-part button, .schedule_edit .panel-second-part p, .schedule_edit .panel-second-part button, .confirm .panel-second-part p, .confirm .button-group .btn {
+	font-size: 14pt !important;
+} 
+.confirm .panel-second-part h2, .schedule_confirm .panel-first-part h1 {
+	font-size: 18pt !important;
+}
+.invitation .form_datetime .input-group-addon {
+	cursor: pointer;
+}
+.invitation #logout {
+	right: -20px;
+}

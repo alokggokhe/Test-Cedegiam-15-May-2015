@@ -1,0 +1,39 @@
+{% extends 'MainBundle::layout_email.html.twig' %}
+
+{% block mailtitle %}
+    Cancellation of {{ schedule.title }} Presentation
+{% endblock %}
+{% block mailbodytitle %}
+    Cancellation of {{ schedule.title  }} Presentation
+{% endblock %}
+
+
+{% block content %}
+    <p  style="padding:0 20px; line-height:1.4;"><br />
+        Dear {{ schedule.firstname|capitalize }} {{ schedule.lastname|capitalize }},
+    </p>
+
+    <p  style="padding:0 20px; line-height:1.4;"><br />
+        Please note that I have cancelled the appointment we had set for a remote presentation on {{ schedule.scheduledatetime|datetime('date') }} at {{ schedule.scheduledatetime|datetime('time') }}.
+    </p>
+
+    <p  style="padding:0 20px; line-height:1.4;"><br />
+        You may therefore want to take out the corresponding invitation you had set to that end in your calendar.
+    </p>
+
+    <p  style="padding:0 20px; line-height:1.4;"><br />
+        I hope we can soon find a new date and time that will be convenient to both of us for me to present you with some interesting material I have prepared for you.
+    </p>
+
+    <p  style="padding:0 20px; line-height:1.4;"><br />
+        I look forward to speaking with soon and remain,
+    </p>
+
+    <p  style="padding:0 20px; line-height:1.4;"><br />
+        Yours very truly.
+    </p>
+
+    <p style="padding:0 20px; line-height:1.4;"><br />
+        Best regards,<br /> Dr. {{ owauser.getFirstname() }} {{ owauser.getUsername() }}
+    </p>
+{% endblock %}

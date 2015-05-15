@@ -1,0 +1,7 @@
+appointment:
+    path:     /
+    defaults: { _controller: "MainBundle:Appointment:index" }
+
+appointment_status_change:
+    path:     /{action}/{id}
+    defaults: { _controller: "MainBundle:Appointment:statusChange" }

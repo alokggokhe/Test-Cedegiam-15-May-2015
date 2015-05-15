@@ -1,0 +1,28 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block modulestylesheets %}
+<link href="{{ asset('bundles/main/css/schedule.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+	<section id="panel">
+		<div class="panel">
+			<div class="panel-first-part">
+				<a href="{{ path('logout') }}" id="logout" title="Logout">Log out</a>
+				<h1 class="panel-title-form title-confirm"><b>Confirm changes</b></h1>
+			</div>
+			<div class="panel-second-part">
+				<form name="" id="" method="POST" action="{{ path('schedule_status',{'action':'cancel','id':schedule.id}) }}">
+					<h2><b>Are you sure ?</b></h2>
+					<p>Doctor  please confirm the cancellation of this appointment.</p>
+					<p>Upon clicking the 'YES,CANCEL' button below, an email will immediately be sent out to your patient on your behalf, advising her that the appointment has been cancelled.</p>
+					<p></p>
+					<div class="row button-group text-center">
+						<button type="submit" class="btn btn-primary pull-right button-space">Yes, Cancel</button>
+						<a href="{{ path('schedule_list', {'action':'get'}) }}" title="No" class="btn btn-default pull-right">No</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}
