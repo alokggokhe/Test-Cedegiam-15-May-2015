@@ -15,13 +15,7 @@ class InvitationController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $session = new Session();
-        $local_timezone = $session->get('local_timezone');
-
-        if($local_timezone == '') {
-            return $this->redirectToRoute('option');
-        }
-
+        $local_timezone = $this->get('session')->get('local_timezone');
         $invitation = new Invitation();
         $form = $this->createForm('invitation', $invitation,array('view_timezone' => $local_timezone));
 
@@ -31,16 +25,11 @@ class InvitationController extends Controller
             $user = $this->get('security.context')->getToken()->getUser();
         }
 
-
         $form->handleRequest($request);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($invitation);
             $em->flush();
-
-            // echo "<pre>";
-            // print_r($invitation->getDateTime());
-            // die;
 
             $mslMailerService = $this->get('msl_mailer');
             $sentMsl = $mslMailerService->sendMail($invitation);
@@ -51,8 +40,6 @@ class InvitationController extends Controller
             if (true !== $sentMsl || true !== $sentHcp ){
                 throw new \Exception('Send mail exception');
             }
-
-
 
             return $this->redirect($this->generateUrl('confirm', array('name'=>$invitation->getName())));
         }

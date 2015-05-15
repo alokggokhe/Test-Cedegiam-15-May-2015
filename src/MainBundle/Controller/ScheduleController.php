@@ -19,9 +19,6 @@ class ScheduleController extends Controller
 	public function addAction(Request $request)
 	{
 		$local_timezone = $this->get('session')->get('local_timezone');
-		if($local_timezone == '') {
-			return $this->redirectToRoute('option');
-		}
 		$schedule = new Schedule();
 		$form = $this->createForm('schedule', $schedule, array('view_timezone' => $local_timezone));
 		$form->handleRequest($request);
@@ -46,9 +43,6 @@ class ScheduleController extends Controller
 	public function editAction(Request $request, $id)
 	{
 		$local_timezone = $this->get('session')->get('local_timezone');
-		if($local_timezone == '') {
-			return $this->redirectToRoute('option');
-		}
 		$doctrine = $this->getDoctrine()->getManager();
 		$schedule = $doctrine->getRepository('MainBundle:Schedule')->find($id);
 		if (!$schedule) {
@@ -82,6 +76,7 @@ class ScheduleController extends Controller
 	{
 		$owauuid 		= '';
 		$owaonekeycode 	= '';
+		$local_timezone = $this->get('session')->get('local_timezone');
 		if($this->get('security.context')->getToken()->getUser() instanceof OwaUser){
 			$owauuid 		= $this->get('security.context')->getToken()->getUser()->getUuid();
 			$owaonekeycode 	= $this->get('security.context')->getToken()->getUser()->getOnekeycode();
@@ -94,9 +89,9 @@ class ScheduleController extends Controller
 		$doctrine = $this->getDoctrine()->getManager();
 
 		if($action == 'upcoming'){
-			$schedule = $doctrine->getRepository('MainBundle:Schedule')->getUpcomingSchdule($owaonekeycode);	
+			$schedule = $doctrine->getRepository('MainBundle:Schedule')->getUpcomingSchdule($owaonekeycode,$local_timezone);	
 		} if($action == 'get'){
-			$schedule = $doctrine->getRepository('MainBundle:Schedule')->getFromTodaySchdule($owaonekeycode);
+			$schedule = $doctrine->getRepository('MainBundle:Schedule')->getFromTodaySchdule($owaonekeycode,$local_timezone);
 		}
 
 		$ucb_patient_action = $this->container->getParameter('ucb_patient_login');

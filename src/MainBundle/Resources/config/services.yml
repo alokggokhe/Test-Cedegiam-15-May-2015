@@ -7,8 +7,8 @@ services:
         class: MainBundle\Form\Type\ScheduleType
         tags:
             - { name: form.type, alias: schedule }
-    mainbundle.twig.locale_extension:
+    main.twig.datetime_extension:
         class: MainBundle\Twig\DatetimeExtension
         tags:
            - { name: twig.extension }
-
+        arguments: [ "@service_container" ]

@@ -20,7 +20,7 @@
 		<div class="panel schedule_form">
 			<div class="panel-form-first-part">
 				<a href="{{ path('logout') }}" id="logout" title="Logout">Log out</a>
-				<h1 class="panel-title-form"><b>Remote Patient Education Organizer</b></h1>
+				<h1 class="panel-title-form">Remote Patient Education Organizer</h1>
 			</div>
 			<div class="panel-form-second-part"></div>
 			<div class="visible-phone">
@@ -119,7 +119,7 @@
 						{% set save_button_text = 'Create and Send Invitation' %}
 					{% endif %}
 
-					{{ form_widget(form.submit,{'label':save_button_text,attr:{'formnovalidate':'formnovalidate','class':'btn btn-primary pull-right button-space','title':save_button_text}}) }}
+					{{ form_widget(form.submit,{'label':save_button_text,attr:{'formnovalidate':'formnovalidate','class':'btn btn-primary button-text pull-right button-space','title':save_button_text}}) }}
 					<a href="{{ path('remote_patient_option') }}" title="Cancel" type="button" class="btn btn-default pull-right">Cancel</a>
 				</div>
 			</div>			

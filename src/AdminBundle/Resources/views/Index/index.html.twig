@@ -5,7 +5,7 @@ Login | Dandelion
 {% endblock %}
 
 {% block modulestylesheets %}
-<link href="{{ asset('bundles/admin/css/login.min.css') }}" type="text/css" rel="stylesheet" />
+	<link href="{{ asset('bundles/admin/css/login.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
@@ -25,11 +25,11 @@ Login | Dandelion
 					{% endif %}
 					{{ form_start(form, {'action': path('_security_check'),'attr': {'novalidate': 'novalidate','method': 'POST','role': 'form','id': 'admin_login'}}) }}
 						<div class="form-group input-group">
-							<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+							<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
 							{{ form_widget(form.username, {'full_name': '_username','id': 'username', 'value': last_username, attr:{'class':'form-control input-lg', 'placeholder': 'Username', 'maxlength': '32'}}) }}
 						</div>
 						<div class="form-group input-group">
-							<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+							<span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
 							{{ form_widget(form.password, {'full_name': '_password','id': 'password',attr:{'class':'form-control input-lg', 'placeholder': 'Password', 'maxlength': '32'}}) }}
 						</div>
 						<div class="button-group text-right" title="CONNECT">

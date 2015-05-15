@@ -2,7 +2,7 @@
 // src/MainBundle/Twig/DatetimeExtension.php
 namespace MainBundle\Twig;
 
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Convert from UTC timezone to local timezone
@@ -12,12 +12,9 @@ class DatetimeExtension extends \Twig_Extension
 	protected $return_formated;
 	protected $timezone;
 
-	public function __construct()
+	public function __construct(ContainerInterface $container)
 	{
-
-		$session = new Session();
-		$local_timezone = $session->get('local_timezone');
-
+		$local_timezone 		= $container->get('session')->get('local_timezone');
 		$this->return_formated 	= '';
 		$this->timezone 		= $local_timezone;
 	}

@@ -1,0 +1,138 @@
+.control-label {
+	margin-top: 10px;
+}
+.schedule_form  input, .schedule_form #datetimepicker {
+	width: 80%;
+}
+.schedule_form .button-group button {
+	font-size: 16px;
+}
+.schedule_form .form-horizontal .control-label {
+	padding-top: 0px;
+}
+.schedule_form .control-label {
+	text-align: left;
+}
+.schedule_form .button-group {
+	float: right;
+	margin-top: -73px;
+}
+.schedule_form .form-sm-margin {
+	margin-bottom: 75px
+}
+.schedule_list_form .list-form-title {
+	font-weight: bold;
+	font-size: 14px;
+	color: #000;
+}
+.schedule_list_form .editschedule {
+	/*padding-right: 3px;*/
+}
+@media(max-width:500px){
+	.schedule_list_form .editschedule {
+		padding-right: 11px;
+	}	
+}
+.schedule_list_form span {
+	font-size: 13px;
+}
+.schedule_list_form .col-xs-6 button {
+	margin: 1px 3px 5px;
+}
+.schedule_list_form .col-xs-6 span {
+	margin-bottom: 10px;
+	padding: 3px 5px;
+}
+.schedule_list_form .col-xs-6 {
+	padding-left: 0px;
+	padding-right: 3px;
+}
+.schedule_list_form .schedule_list_first {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-size: 14pt !important;
+}
+.schedule_list_form .schedule_list_session {
+	margin-top: 50px;
+}
+.schedule_list_form .row .scheduledate .form-control {
+	height: 76px;
+	font-size: 16px;
+	padding-top: 13px;
+	text-align: center;
+	margin-bottom: 12px;
+}
+.scrollable-menu {
+	height: auto;
+	max-height: 550px;
+	/*overflow-x: hidden;*/
+	padding-top: 10px;
+	z-index: 1;
+}
+.schedule_list_form .scrollable-menu .row {
+   margin-left: 0;
+   margin-right: 2px;
+}
+.schedule_form .form-sm-margin {
+	margin-bottom: 75px;
+}
+.schedule_form .button-group {
+	float: right;
+	margin-top: -73px;
+}
+.schedule_form .glyphicon-calendar {
+	cursor: pointer;
+}
+.schedule_form .button-space {
+	margin-left: 5px;
+}
+.schedule_form .margin-top-60px {
+	margin-top: 60px;
+}
+.schedule_list_form {
+	/*padding-bottom: 50px !important;*/
+	padding: 5px 22px 40px !important
+}
+.schedule_list_form .panel-form-second-part {
+	margin-bottom: 5px !important;
+	font-size: 14pt !important;
+}
+.schedule_list .scheduledatetime-box {
+	height: 75px;
+	padding: 5px 0 0 !important;
+	text-align: center;
+}
+.schedule_list .confirmed-schedule-color {
+	color: #008000;
+}
+.schedule_list .confirmed-edited-schedule-color {
+	color: #CC9933;
+}
+.schedule_list .cancelled-schedule-color {
+	color: #FF0000;
+}
+.schedule_list .done-schedule-color {
+	color: #008000;
+}
+.schedule_list .initiate-schedule {
+	height: 75px;
+}
+.button-space {
+	margin-left: 5px;
+}
+.schedule_form .form-bottom-text {
+	margin-top: 45px;
+	margin-bottom: 25px;
+}
+.btn_initiate_schedule {
+	padding: 5px 4px;
+}
+.schedule_new form .form-horizontal .form-group .col-sm-3 {
+	width: 130px;
+}
+.schedule_edit .schedule_form h1 {
+	font-size: 18pt !important;
+}
+.schedule_new form .form-group label, .schedule_new form .form-group .btn, .schedule_edit form .form-group .btn ,.schedule_edit form .form-group label, .schedule_list .schedule_list_form .button-group button,.schedule_list .schedule_list_form .button-group a {
+	font-size: 14pt !important;
+}
